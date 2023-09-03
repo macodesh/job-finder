@@ -14,9 +14,9 @@ router.get("/", (_req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { title, salary, email, company, description, is_new } = req.body;
+  const { title, salary, email, company, description, isNew } = req.body;
 
-  Job.create({ title, salary, email, company, is_new, description })
+  Job.create({ title, salary, email, company, isNew, description })
     .then(() => {
       res.redirect("/");
     })
