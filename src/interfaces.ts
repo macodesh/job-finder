@@ -5,4 +5,5 @@ export interface IJob {
   company: string
   email: string
   isNew: boolean
+  id: number
 }

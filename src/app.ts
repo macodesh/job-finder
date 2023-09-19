@@ -1,4 +1,4 @@
-import express, { json, static as _static } from 'express'
+import express, { json, static as _static, urlencoded } from 'express'
 import db from './db/connection'
 import jobRoutes from './routes/jobs'
 import { engine } from 'express-handlebars'
@@ -9,6 +9,7 @@ import { Op } from 'sequelize'
 const app = express()
 
 app.use(json())
+app.use(urlencoded({ extended: false }))
 
 app.engine('handlebars', engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')

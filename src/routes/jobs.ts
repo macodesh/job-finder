@@ -13,9 +13,9 @@ router.get('/', async (_req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const { title, salary, email, company, description, isNew } = req.body
-
   try {
+    const { title, salary, email, company, description, isNew } = req.body
+
     await Job.create({ title, salary, email, company, isNew, description })
     res.redirect('/')
   } catch (err) {

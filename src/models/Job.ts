@@ -1,10 +1,15 @@
-import { DataTypes, Model } from 'sequelize'
+import { DataTypes, Model, Optional } from 'sequelize'
 import db from '../db/connection'
 import { IJob } from '../interfaces'
 
-const Job = db.define<Model<IJob>>(
+const Job = db.define<Model<IJob, Optional<IJob, 'id'>>>(
   'job',
   {
+    id: {
+      type: DataTypes.NUMBER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     title: {
       type: DataTypes.STRING
     },
