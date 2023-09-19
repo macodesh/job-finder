@@ -6,7 +6,9 @@ O Job Finder é uma plataforma em desenvolvimento que permite aos usuários busc
 
 ## Screenshots
 
+![Mobile](screenshots/mobile.png)
 
+![Desktop](screenshots/desktop.png)
 
 ## Status do Projeto
 
