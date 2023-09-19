@@ -15,9 +15,7 @@ app.set('view engine', 'handlebars')
 app.set('views', path.join(__dirname, 'views'))
 app.use(_static(path.join(__dirname, '../', 'public')))
 
-app.get('/ok', (_req, res) => {
-  res.status(200).json({ message: 'OK' })
-})
+app.get('/ok', (_req, res) => res.status(200).json({ message: 'OK' }))
 
 app.get('/', async (req, res) => {
   const { jobSearch } = req.query

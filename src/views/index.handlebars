@@ -3,12 +3,11 @@
     Encontre o emprego dos seus sonhos
   </h1>
   <p id="main-subtitle" class="text-center">
-    Somos o site com mais vagas de tecnologia no mercado direcionadas à home
-    office
+    Somos o site com mais vagas de tecnologia no mercado direcionadas à home office
   </p>
-  <form action="/" id="search-form" class="form-inline" method="get">
-    <div class="form-group col-md-10">
-      <label for="job"></label>
+  <form action="/" id="search-form" class="row g-2 align-items-">
+    <div class="col-md-10">
+      <label for="jobSearch" class="visually-hidden" hidden>Pesquisar</label>
       <input type="text" name="jobSearch" id="jobSearch" class="form-control"
         placeholder="Digite a vaga que está buscando" />
     </div>
@@ -31,11 +30,15 @@
         <ul id="job-list" class="list-group">
           {{#each jobs}}
           <li class="list-group-item {{#if dataValues.isNew}}new-job{{/if}}">
-            <img src="/img/company.svg" alt="Empresa" />
-            <p>{{dataValues.company}}</p>
-            <h2>{{dataValues.title}}</h2>
-            <p>R$ {{dataValues.salary}},00</p>
-            <span class="new-job-label">Nova</span>
+            <div class="d-flex align-items-center">
+              <img src="/img/company.svg" alt="Empresa" class="me-3" />
+              <div>
+                <p>{{dataValues.company}}</p>
+                <h2>{{dataValues.title}}</h2>
+                <p>R$ {{dataValues.salary}},00</p>
+                <span class="new-job-label">Nova</span>
+              </div>
+            </div>
             <a href="#" class="btn btn-primary">Ver vaga</a>
           </li>
           {{/each}}
