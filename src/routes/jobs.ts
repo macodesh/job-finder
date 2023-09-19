@@ -13,9 +13,9 @@ router.get('/', async (_req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  try {
-    const { title, salary, email, company, description, isNew } = req.body
+  const { title, salary, email, company, description, isNew } = req.body
 
+  try {
     await Job.create({ title, salary, email, company, isNew, description })
     res.redirect('/')
   } catch (err) {
@@ -25,6 +25,17 @@ router.post('/', async (req, res) => {
 
 router.get('/add', (_req, res) => {
   res.render('add')
+})
+
+router.get('/:id', async (req, res) => {
+  const { id } = req.params
+
+  try {
+    const job = await Job.findByPk(id)
+    res.render('view', { job })
+  } catch (err) {
+    console.error(err)
+  }
 })
 
 export default router
