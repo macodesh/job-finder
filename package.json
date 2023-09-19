@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/app.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && copyfiles -u 1 \"src/views/*\" dist/ && copyfiles -u 2 \"src/views/layouts/*\" dist/views",
     "lint": "eslint --fix \"src/**/*{js,jsx,ts,tsx}\"",
     "format": "prettier --write --cache --cache-strategy metadata \"src/**/*.{js,jsx,ts,tsx}\"",
-    "format:lint": "pnpm format && pnpm lint"
+    "format:lint": "pnpm format && pnpm lint",
+    "start": "pnpm build && node dist/app.js",
+    "start:npm": "npm build && node dist/app.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "@types/node": "^20.5.7",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.49.0",
     "nodemon": "^3.0.1",
     "sequelize-cli": "^6.6.1",
