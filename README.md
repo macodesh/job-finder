@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-O Job Finder é uma plataforma em desenvolvimento que permite aos usuários buscar e publicar vagas de trabalho remoto. É uma ferramenta valiosa para quem procura oportunidades de emprego em qualquer lugar do mundo ou deseja recrutar talentos globalmente.
+O Job Finder é uma plataforma que permite aos usuários buscar e publicar vagas de trabalho remoto. É uma ferramenta valiosa para quem procura oportunidades de emprego em qualquer lugar do mundo ou deseja recrutar talentos globalmente.
 
 ## Screenshots
 
